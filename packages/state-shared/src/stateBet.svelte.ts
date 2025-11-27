@@ -2,7 +2,7 @@ import type { BaseBet } from 'utils-bet';
 import { stateMeta } from './stateMeta.svelte';
 
 export type Currency = string;
-export type LastBet = BaseBet | null;
+export type BetToResume = BaseBet | null;
 export type BetModeKey = string;
 
 export const stateBet = $state({
@@ -10,7 +10,7 @@ export const stateBet = $state({
 	balanceAmount: 0,
 	betAmount: 1,
 	wageredBetAmount: 1,
-	lastBet: null as LastBet,
+	betToResume: null as BetToResume,
 	activeBetModeKey: 'BASE' as BetModeKey,
 	winBookEventAmount: 0,
 	autoSpinsLoss: 0,

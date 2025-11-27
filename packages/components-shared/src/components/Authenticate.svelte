@@ -84,7 +84,7 @@
 
 				if(authenticateData.round?.state) {
 					// @ts-ignore
-					stateBet.lastBet =  authenticateData.round;
+					stateBet.betToResume =  authenticateData.round;
 				}
 
 				if(authenticateData.round?.amount) {
@@ -121,7 +121,7 @@
 
 		if(data) {
 			// @ts-ignore
-			stateBet.lastBet = {
+			stateBet.betToResume = {
 				...data,
 				event: '0',
 				active: true,

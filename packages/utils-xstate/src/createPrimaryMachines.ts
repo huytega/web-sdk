@@ -70,8 +70,8 @@ const handleUpdateBalance = ({ balanceAmountFromApi }: { balanceAmountFromApi: n
 };
 
 type Options<TBet extends BaseBet> = {
-	onResumeGameActive: (lastBetData: TBet) => TBet;
-	onResumeGameInactive: (lastBetData: TBet) => void;
+	onResumeGameActive: (betToResume: TBet) => TBet;
+	onResumeGameInactive: (betToResume: TBet) => void;
 	onNewGameStart: () => Promise<void> | undefined;
 	onNewGameError: () => any;
 	onPlayGame: (bet: TBet) => Promise<void>;
@@ -159,22 +159,22 @@ function createPrimaryMachines<TBet extends BaseBet>(options: Options<TBet>) {
 
 	// resumeGame
 	const resumeGame = fromPromise(async () => {
-		const lastBetData = stateBet.lastBet as TBet;
+		const betToResume = stateBet.betToResume as TBet;
 
-		if (lastBetData && lastBetData.active) {
+		if (betToResume && betToResume.active) {
 			// Optional chaining doesn't work here with build-node. 🤷‍♂️
-			stateBet.lastBet = null;
+			stateBet.betToResume = null;
 
 			//End Round resumed active bet
-			const bet = lastBetData as TBet;
+			const bet = betToResume as TBet;
 			const betType = getBetType({ bet });
 			await BET_TYPE_METHODS_MAP[betType].newGame();
 
-			return { bet: onResumeGameActive(lastBetData), rawBet: lastBetData };
+			return { bet: onResumeGameActive(betToResume), rawBet: betToResume };
 		}
 
-		if (lastBetData && lastBetData.state && lastBetData.state.length > 0) {
-			onResumeGameInactive(lastBetData);
+		if (betToResume && betToResume.state && betToResume.state.length > 0) {
+			onResumeGameInactive(betToResume);
 		}
 
 		throw new Error('inactive Bet');

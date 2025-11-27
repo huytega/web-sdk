@@ -10,10 +10,10 @@ import { playBet, convertTorResumableBet } from './utils';
 import { stateGameDerived } from './stateGame.svelte';
 
 const primaryMachines = createPrimaryMachines<Bet>({
-	onResumeGameActive: (lastBetData) => convertTorResumableBet(lastBetData),
-	onResumeGameInactive: (lastBetData) => {
+	onResumeGameActive: (betToResume) => convertTorResumableBet(betToResume),
+	onResumeGameInactive: (betToResume) => {
 		const lastRevealEvent = _.findLast(
-			lastBetData.state,
+			betToResume.state,
 			(emitterEvent) => emitterEvent?.type === 'reveal',
 		);
 

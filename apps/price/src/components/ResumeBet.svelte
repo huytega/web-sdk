@@ -6,8 +6,8 @@
 	const context = getContext();
 
 	onMount(() => {
-		if (stateBet.lastBet?.active && stateBet.lastBet.mode) {
-			stateBet.activeBetModeKey = stateBet.lastBet.mode;
+		if (stateBet.betToResume?.active && stateBet.betToResume.mode) {
+			stateBet.activeBetModeKey = stateBet.betToResume.mode;
 		}
 		context.eventEmitter.broadcast({ type: 'resumeBet' });
 	});

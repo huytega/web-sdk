@@ -11,10 +11,10 @@ import { stateGame, stateGameDerived } from './stateGame.svelte';
 import config from './config';
 
 const primaryMachines = createPrimaryMachines<Bet>({
-	onResumeGameActive: (lastBetData) => convertTorResumableBet(lastBetData),
-	onResumeGameInactive: (lastBetData) => {
+	onResumeGameActive: (betToResume) => convertTorResumableBet(betToResume),
+	onResumeGameInactive: (betToResume) => {
 		const lastRevealEvent = _.findLast(
-			lastBetData.state,
+			betToResume.state,
 			(bookEvent) => bookEvent?.type === 'reveal',
 		);
 

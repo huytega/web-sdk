@@ -32,12 +32,12 @@ const BOOK_EVENT_TYPES_TO_RESERVE_FOR_SNAPSHOT = [
 	'setTotalWin',
 ];
 
-export const convertTorResumableBet = (lastBetData: Bet) => {
-	const resumingIndex = Number(lastBetData.event);
-	const bookEventsBeforeResume = lastBetData.state.filter(
+export const convertTorResumableBet = (betToResume: Bet) => {
+	const resumingIndex = Number(betToResume.event);
+	const bookEventsBeforeResume = betToResume.state.filter(
 		(_, eventIndex) => eventIndex < resumingIndex,
 	);
-	const bookEventsAfterResume = lastBetData.state.filter(
+	const bookEventsAfterResume = betToResume.state.filter(
 		(_, eventIndex) => eventIndex >= resumingIndex,
 	);
 
@@ -51,7 +51,7 @@ export const convertTorResumableBet = (lastBetData: Bet) => {
 
 	const stateToResume = [bookEventToCreateSnapshot, ...bookEventsAfterResume];
 
-	return { ...lastBetData, state: stateToResume };
+	return { ...betToResume, state: stateToResume };
 };
 
 // other utils
