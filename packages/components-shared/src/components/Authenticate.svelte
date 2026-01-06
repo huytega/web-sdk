@@ -1,3 +1,4 @@
+
 <script lang="ts">
 	import { onMount, type Snippet } from 'svelte';
 
@@ -131,6 +132,17 @@
 	};
 
 	onMount(async () => {
+		// DEV MODE BYPASS - Skip authentication if no sessionID
+		if (!stateUrlDerived.sessionID()) {
+			console.warn('⚠️ DEV MODE: Bypassing authentication - using mock balance');
+			
+			stateBet.balanceAmount = 100000; // $100,000 USD
+			stateBet.currency = 'USD';
+			
+			authenticated = true;
+			return;
+		}
+		
 		if(stateUrlDerived.replay()) {
 			stateUi.config.mode = 'replay';
 			await handleReplay();
