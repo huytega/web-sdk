@@ -71,17 +71,8 @@
 				<UiGameName name="LINES GAME" />
 			{/snippet}
 			{#snippet logo()}
-				<Text
-					anchor={{ x: 1, y: 0 }}
-					text="ADD YOUR LOGO"
-					style={{
-						fontFamily: 'proxima-nova',
-						fontSize: REM * 1.5,
-						fontWeight: '600',
-						lineHeight: REM * 2,
-						fill: 0xffffff,
-					}}
-				/>
+				<!-- Show logo image instead of text -->
+				<img src="/logo.png" alt="logo" style="position:absolute;top:0;right:0;width:120px;height:auto;z-index:1000;" />
 			{/snippet}
 		</UI>
 		<Win />

@@ -1,0 +1,68 @@
+bonus.png
+size:1998,717
+filter:Linear,Linear
+buy bonus/BLOCK BONUS
+bounds:1721,73,235,78
+offsets:3,3,244,84
+rotate:90
+buy bonus/BLOCK BONUS-2
+bounds:1838,478,237,78
+offsets:4,3,246,84
+rotate:90
+buy bonus/EXTRA CHANCE
+bounds:1801,108,239,78
+offsets:3,3,246,84
+rotate:90
+buy bonus/EXTRA CHANCE-2
+bounds:1918,440,275,78
+offsets:3,3,284,84
+rotate:90
+buy bonus/Ellipse 1936
+bounds:1705,2,81,69
+offsets:9,5,100,81
+buy bonus/Frame
+bounds:518,17,510,698
+offsets:9,10,530,717
+buy bonus/Frame-2
+bounds:2,13,514,702
+offsets:7,8,530,717
+buy bonus/Group 1410132176
+bounds:1876,8,64,97
+rotate:90
+buy bonus/Group 1410132176-2
+bounds:1801,42,64,73
+rotate:90
+buy bonus/Star
+bounds:1776,325,20,22
+offsets:3,3,27,27
+buy bonus/Star-2
+bounds:1788,10,30,30
+offsets:3,4,37,37
+buy bonus/button
+bounds:1330,153,389,155
+offsets:1,1,392,157
+buy bonus/button-2
+bounds:1330,7,373,144
+buy bonus/ender-eye-active
+bounds:1030,12,298,296
+offsets:28,29,356,356
+buy bonus/ender-eye-inactive
+bounds:1776,349,126,127
+offsets:5,5,136,136
+buy bonus/x10
+bounds:1881,206,141,82
+offsets:4,4,149,90
+rotate:90
+buy bonus/x5
+bounds:1904,374,84,64
+offsets:3,3,90,69
+buy bonus/Снимок экрана 2025-11-28 в 12.42.41
+bounds:1881,74,130,84
+offsets:0,1,130,85
+rotate:90
+Слой 18
+bounds:1030,499,806,216
+offsets:23,20,855,254
+Слой 19
+bounds:1030,310,744,187
+offsets:21,19,790,224

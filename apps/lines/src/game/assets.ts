@@ -1,3 +1,6 @@
+import type blocks from "../../static/assets/spines/blocks";
+import type symbolsStatic from "../../static/assets/sprites/symbolsStatic";
+
 export default {
 	loader: {
 		type: 'spine',
@@ -192,8 +195,8 @@ export default {
 	foregroundAnimation: {
 		type: 'spine',
 		src: {
-			atlas: new URL('../../assets/spines/foregroundAnimation/mm_bg.atlas', import.meta.url).href,
-			skeleton: new URL('../../assets/spines/foregroundAnimation/mm_bg.json', import.meta.url).href,
+			atlas: new URL('../../assets/spines/foregroundAnimation/mineslot.atlas', import.meta.url).href,
+			skeleton: new URL('../../assets/spines/foregroundAnimation/mineslot.json', import.meta.url).href,
 			scale: 2,
 		},
 		preload: true,
@@ -260,17 +263,25 @@ export default {
 			scale: 2,
 		},
 	},
+	// blocks: {
+	// 	type: 'spine',
+	// 	src: {
+	// 		atlas: new URL('../../assets/spines/blocks/blocks.atlas', import.meta.url).href,
+	// 		skeleton: new URL('../../assets/spines/blocks/blocks.json', import.meta.url).href,
+	// 		scale: 2,
+	// 	},
+	// },
 	symbolsStatic: {
 		type: 'sprites',
 		src: new URL('../../assets/sprites/symbolsStatic/symbolsStatic.json', import.meta.url).href,
 	},
 	coins: {
-		type: 'spriteSheet',
-		src: new URL('../../assets/sprites/coin/SD2_Coin.json', import.meta.url).href,
-	},
-	sound: {
-		type: 'audio',
-		src: new URL('../../assets/audio/sounds.json', import.meta.url).href,
-		preload: true,
-	},
-} as const;
+			type: 'spriteSheet',
+			src: new URL('../../assets/sprites/coin/SD2_Coin.json', import.meta.url).href,
+		},
+		sound: {
+			type: 'audio',
+			src: new URL('../../assets/audio/sounds.json', import.meta.url).href,
+			preload: true,
+		},
+	} as const;
